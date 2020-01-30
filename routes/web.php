@@ -32,6 +32,15 @@ Route::put('/categories/{id}/update', 'CategoryController@update')->name('catego
 Route::get('/categories/{id}/delete', 'CategoryController@delete')->name('category.delete');
 
 
+Route::get('/posts', 'PostController@index')->name('post.index');
+Route::get('/posts/{id}/show', 'PostController@show')->name('post.show');
+Route::get('/posts/create', 'PostController@create')->name('post.create');
+Route::post('/posts/store', 'PostController@store')->name('post.store');
+Route::get('/posts/{id}/edit', 'PostController@edit')->name('post.edit');
+Route::put('/posts/{id}/update', 'PostController@update')->name('post.update');
+Route::get('/posts/{id}/delete', 'PostController@delete')->name('post.delete');
+
+
 
 
 

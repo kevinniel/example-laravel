@@ -9,7 +9,18 @@
 	<ul>
 		@foreach($categories as $category)
 			<li>
-				<a href="{{ route('category.show', $category->id) }}" title="{{ $category->name }}">{{ $category->name }}</a>
+				<a href="{{ route('category.show', $category->id) }}" title="{{ $category->name }}">{{ $category->name }} ({{ count($category->posts) }}) </a>
+
+				@if(count($category->posts) > 0)
+				<ul>
+					@foreach($category->posts as $post)
+						<li>
+							<a href="{{ route('post.show', $post->id) }}" title="{{ $post->name }}">{{ $post->name }}</a>
+						</li>
+					@endforeach
+				</ul>
+				@endif
+
 			</li>
 		@endforeach
 	</ul>
